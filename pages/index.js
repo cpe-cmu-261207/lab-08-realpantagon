@@ -27,6 +27,7 @@ export default function Home() {
   const clear = () => {
     //your code here
     //Hint : use CanvasLib.createEmptyCanvas()
+    // clearInterval(interval);
     setPixels(CanvasLib.createEmptyCanvas());
   };
 
@@ -34,11 +35,11 @@ export default function Home() {
     setPixels(CanvasLib.createRandomCanvas());
   };
 
-  const Disco = () => {
-    setInterval(() => {
-      setPixels(CanvasLib.createRandomCanvas());
-    }, 200);
-  };
+  // const Disco = () => {
+  //   setInterval(() => {
+  //     setPixels(CanvasLib.createRandomCanvas());
+  //   }, 200);
+  // };
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "GhostWhite" }}>
       <PainterContext.Provider value={{ selColor, setSelColor, pixels, paint }}>
@@ -53,9 +54,9 @@ export default function Home() {
           <button className="btn btn-dark" onClick={Random}>
             Random Color
           </button>
-          <button className="btn btn-dark" onClick={Disco}>
+          {/* <button className="btn btn-dark" onClick={Disco}>
             Disco
-          </button>
+          </button> */}
         </div>
       </PainterContext.Provider>
     </div>
