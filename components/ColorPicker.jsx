@@ -6,6 +6,7 @@ export default function ColorPicker(props) {
 
   const { selColor, setSelColor } = useContext(PainterContext);
 
+  //แสดงเส้นขอบ ขึ้นอยู่กับว่าสีนี้ถูกเลือกอยู่มั้ย
   return (
     <div
       style={{
@@ -21,10 +22,13 @@ export default function ColorPicker(props) {
         //if this color is not selected, show this
         //borderColor: "black",
         //borderWidth: "2px",
+        borderColor: selColor === color ? "magenta" : "black",
+        borderWidth: selColor === color ? "3px" : "2px",
       }}
       onClick={() => {
         //set selecting color when clicked
         //your code here
+        setSelColor(color);
       }}
     />
   );

@@ -13,7 +13,9 @@ export default function Cell(props) {
         height: "40px",
 
         //please replace color with painted color from position xPos, yPos
-        backgroundColor: "#FFFFFF",
+        //อ่านจากPixel ,xPos,yPos
+
+        backgroundColor: pixels[yPos][xPos],
 
         borderWidth: "1px",
         borderStyle: "solid",
@@ -22,6 +24,7 @@ export default function Cell(props) {
       onClick={() => {
         //when clicked, set pixels data at position xPos, yPos with selected color
         //you code here
+        paint(xPos, yPos);
       }}
     ></div>
   );
